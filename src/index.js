@@ -10,7 +10,7 @@ app.listen(5000,async () => {
 
     const service = new TweetService();
     const tweet = await service.create({
-        content: 'Done with #refactor ?'
+        content: 'my other #CoDE #works or #NOT?'
     })
     console.log(tweet);
 })

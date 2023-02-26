@@ -10,7 +10,7 @@ app.use(bodyParser.urlencoded({extended: true}));
 app.use('/api', apiRoutes);
 
 app.listen(3000,async () => {
-    console.log(`Server is up and running on PORT : 5000`);
+    console.log(`Server is up and running on PORT : 3000`);
     await connect();
     console.log("Mongo db connected");
 })

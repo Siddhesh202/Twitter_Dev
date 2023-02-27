@@ -7,6 +7,6 @@ const router = express.Router();
 
 router.post('/tweets', createTweet);
 
-router.post('/likes', toggle);
+router.post('/likes/toggle', toggle);
 
 export default router;

@@ -1,17 +1,16 @@
-import LikeService from "../services/like-service.js";
+import CommentService from "../services/comment-service.js";
 
-const likeService = new LikeService();
+const commentService = new CommentService();
 
-export const toggle = async(req, res) => {
+export const createComment = async (req, res) => {
     try {
-        const response = await likeService.toggleLike(req.query.modelId, req.query.modelType, req.body.userId);
+        const response = await commentService.create(req.query.modelId, req.query.modelType, req.body.userId, req.body.content)
         return res.status(200).json({
             success: true,
-            message: 'Successfully toggled the like',
+            message: 'Successfully created a new comment',
             data: response,
             err: {}
         });
-
     } catch (error) {
         return res.status(500).json({
             success: false,

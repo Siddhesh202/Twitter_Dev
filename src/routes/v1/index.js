@@ -6,10 +6,13 @@ import { createComment } from '../../controllers/comment-controller.js'
 import { signup, login } from '../../controllers/auth-controller.js'
 
 import { authenticate } from "../../middlewares/authenticate.js"
+import upload from "../../config/file-upload-s3-config.js";
+
+const singleUploader = upload.single('image');
 
 const router = express.Router();
 
-router.post('/tweets', authenticate, createTweet);
+router.post('/tweets', singleUploader, createTweet);
 router.get('/tweets/:id', getTweet);
 
 router.post('/likes/toggle', toggle);

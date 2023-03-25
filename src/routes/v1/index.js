@@ -7,9 +7,11 @@ import { signup, login } from '../../controllers/auth-controller.js'
 
 import { authenticate } from "../../middlewares/authenticate.js"
 
+import {awsMiddleware} from "../../config/aws-middleware.js"
+
 const router = express.Router();
 
-router.post('/tweets', createTweet);
+router.post('/tweets', awsMiddleware, createTweet);
 router.get('/tweets/:id', getTweet);
 
 router.post('/likes/toggle', toggle);

@@ -21,7 +21,7 @@ const tweetSchema = new mongoose.Schema({
         }
     ],
 
-    images:{
+    image:{
         type: String
     }
 
